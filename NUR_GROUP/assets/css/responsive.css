@@ -1,0 +1,201 @@
+/*--------------------------------------------------------------
+  NUR GROUP - RESPONSIVE LAYER
+  Load this file AFTER main.css on every page.
+  Covers: 280px phones -> tablets -> laptops -> 4K / 8K / giant displays
+--------------------------------------------------------------*/
+
+/* ============ 1. GLOBAL SAFETY RULES ============ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;          /* never allow sideways scrolling */
+  min-width: 280px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+img, svg, video, canvas, picture {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe { max-width: 100%; }
+
+/* Keep images that rely on a fixed height from stretching */
+img[style*="height: 180px"],
+img[style*="height:180px"] {
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+/* "contain" product images keep their full picture visible */
+img[style*="object-fit: contain"][style*="height: 180px"] { object-fit: contain; }
+
+/* Tables: scroll inside their own box instead of breaking the page */
+.table-responsive { -webkit-overflow-scrolling: touch; }
+table { max-width: 100%; }
+td, th { overflow-wrap: anywhere; }
+
+/* ============ 2. HEADER / LOGO (all sizes) ============ */
+.header .branding .logo img,
+.header .logo img {
+  width: clamp(48px, 9vw, 105px) !important;
+  height: clamp(44px, 8vw, 90px) !important;
+  max-height: none !important;
+  object-fit: contain;
+  margin-right: clamp(6px, 1.2vw, 15px) !important;
+}
+
+.header .logo h1,
+.header .logo .sitename {
+  font-size: clamp(18px, 3.2vw, 30px);
+  white-space: normal;
+}
+
+.header .topbar { height: auto; min-height: 42px; padding: 4px 0; }
+.header .topbar .container,
+.header .topbar .container-fluid { flex-wrap: wrap; gap: 4px 16px; }
+
+/* Bigger tap targets on touch screens */
+@media (hover: none) and (pointer: coarse) {
+  .navmenu a, .btn, button, .mobile-nav-toggle { min-height: 44px; }
+  .mobile-nav-toggle { font-size: 32px; padding: 6px; }
+}
+
+/* ============ 3. HERO VIDEO (index.html) ============ */
+section#hero {
+  width: 100% !important;
+  height: 100vh !important;                 /* fallback */
+  height: 100svh !important;                /* real visible height on phones */
+  max-height: 1400px;
+}
+#myVideo { object-fit: cover; }
+
+#muteButton {
+  bottom: clamp(10px, 2vw, 24px) !important;
+  right: clamp(10px, 2vw, 24px) !important;
+  padding: 10px 16px !important;
+  font-size: clamp(13px, 1.4vw, 18px);
+  border-radius: 8px;
+  border: 0;
+}
+
+/* Phones & small tablets: show the video in a cinematic ratio, not full screen */
+@media (max-width: 767.98px) {
+  section#hero {
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    min-height: 220px;
+    max-height: 70svh;
+  }
+}
+
+/* Landscape phones: avoid a hero taller than the screen */
+@media (max-height: 480px) and (orientation: landscape) {
+  section#hero { height: 100svh !important; aspect-ratio: auto; max-height: none; }
+}
+
+/* ============ 4. SECTIONS & TYPOGRAPHY ============ */
+section, .section { padding-left: 0; padding-right: 0; }
+
+h1 { font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 1rem + 0.9vw, 1.75rem); }
+
+@media (max-width: 575.98px) {
+  section#about[style*="padding"] { padding: 40px 0 !important; }
+  .section-title h2 { font-size: 1.5rem; }
+  .container, .container-fluid { padding-left: 14px; padding-right: 14px; }
+}
+
+/* ============ 5. CERTIFICATE / BADGE BOXES (index.html) ============ */
+.swiper-slide > div[style*="width: 200px"] {
+  width: min(200px, 100%) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+}
+.swiper-slide img { max-width: 100%; }
+
+/* ============ 6. GOOGLE MAP ============ */
+iframe[src*="google.com/maps"] {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  min-height: 260px;
+  border-radius: 8px;
+}
+
+/* ============ 7. FORMS ============ */
+input, textarea, select, button { max-width: 100%; }
+@media (max-width: 575.98px) {
+  input, textarea, select { font-size: 16px; }   /* stops iOS zoom-on-focus */
+}
+
+/* ============ 8. ZOOM / LIGHTBOX MODAL ============ */
+#myUniqueZoomModal { height: 100vh; height: 100dvh; }
+@media (max-width: 575.98px) {
+  #myUniqueZoomModal .modal-box { max-width: 96vw; padding: 8px; }
+  #myUniqueModalImg { max-width: 92vw; max-height: 75dvh; }
+  #myUniqueZoomModal .close-btn { top: 12px; right: 16px; }
+}
+
+/* ============ 9. TABLET (768 - 991px) ============ */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container, .container-fluid { padding-left: 24px; padding-right: 24px; }
+}
+
+/* ============ 10. VERY SMALL PHONES (<= 359px) ============ */
+@media (max-width: 359.98px) {
+  html { font-size: 14px; }
+  .header .logo h1, .header .logo .sitename { font-size: 16px; }
+  .header .topbar .contact-info { flex-wrap: wrap; }
+  .btn { padding-left: 12px; padding-right: 12px; }
+}
+
+/* ============ 11. LARGE DESKTOPS / 4K / 8K / HUGE SCREENS ============
+   Bootstrap stops growing at 1320px, which looks tiny on big monitors.
+   These steps widen the layout and scale all rem-based text smoothly. */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+}
+@media (min-width: 1920px) {
+  html { font-size: 18px; }
+  .container { max-width: 1600px; }
+}
+@media (min-width: 2560px) {              /* 2K / QHD+ */
+  html { font-size: 22px; }
+  .container { max-width: 2000px; }
+}
+@media (min-width: 3840px) {              /* 4K UHD */
+  html { font-size: 32px; }
+  .container { max-width: 3000px; }
+}
+@media (min-width: 5120px) {              /* 5K / ultra-wide / giant signage */
+  html { font-size: 44px; }
+  .container { max-width: 4200px; }
+}
+@media (min-width: 7680px) {              /* 8K and beyond */
+  html { font-size: 64px; }
+  .container { max-width: 6200px; }
+}
+/* Header/topbar use px in main.css, so let them follow rem on big screens */
+@media (min-width: 1920px) {
+  .header .topbar { font-size: 1rem; }
+  .header .logo h1, .header .logo .sitename { font-size: 1.9rem; }
+  .header .logo img { width: 6rem !important; height: 5.2rem !important; }
+}
+
+/* ============ 12. PRINT & MOTION PREFERENCES ============ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
