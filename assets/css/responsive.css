@@ -51,11 +51,23 @@ td, th { overflow-wrap: anywhere; }
   margin-right: clamp(6px, 1.2vw, 15px) !important;
 }
 
+/* One shared logo look for every page (replaces the old per-page inline styles) */
+.header .logo img {
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fff;
+  padding: 5px;
+}
+
 .header .logo h1,
 .header .logo .sitename {
   font-size: clamp(18px, 3.2vw, 30px);
-  white-space: normal;
+  white-space: nowrap;          /* keep "Nur Group" on one line */
+  margin: 0;
 }
+/* "Nur Group" always stays on a single line */
+.header .logo h1,
+.header .logo .sitename { white-space: nowrap !important; }
 
 .header .topbar { height: auto; min-height: 42px; padding: 4px 0; }
 .header .topbar .container,
@@ -65,6 +77,34 @@ td, th { overflow-wrap: anywhere; }
 @media (hover: none) and (pointer: coarse) {
   .navmenu a, .btn, button, .mobile-nav-toggle { min-height: 44px; }
   .mobile-nav-toggle { font-size: 32px; padding: 6px; }
+}
+
+/* ============ 2b. SMALL LAPTOPS (1200 - 1399px) ============
+   The full menu is ~1060px wide, wider than Bootstrap's 1140px container
+   leaves room for next to the logo. Compact style so it never collides. */
+@media (min-width: 1200px) and (max-width: 1919.98px) {   /* extended up to 1919px so the name fits on ONE line */
+  .header .branding .container,
+  .header .topbar .container { max-width: 100%; }
+
+  /* main.css forces these values with !important, so we must match that */
+  .header .navmenu > ul > li > a,
+  .header .navmenu > ul > li > a:focus { padding: 8px 9px !important; font-size: 14px !important; letter-spacing: 0.3px !important; }
+  .header .navmenu > ul > li > a i { margin-left: 4px; }
+
+  .header .branding .logo img,
+  .header .logo img { width: 64px !important; height: 56px !important; margin-right: 8px !important; }
+  .header .logo h1,
+  .header .logo .sitename { font-size: 22px; white-space: nowrap; }
+}
+
+/* Extra-compact step for the narrowest desktop range (1200 - 1279px) */
+@media (min-width: 1200px) and (max-width: 1279.98px) {
+  .header .navmenu > ul > li > a,
+  .header .navmenu > ul > li > a:focus { padding: 8px 5px !important; font-size: 13px !important; letter-spacing: 0 !important; }
+  .header .branding .logo img,
+  .header .logo img { width: 52px !important; height: 46px !important; margin-right: 6px !important; }
+  .header .logo h1,
+  .header .logo .sitename { font-size: 18px; }
 }
 
 /* ============ 3. HERO VIDEO (index.html) ============ */

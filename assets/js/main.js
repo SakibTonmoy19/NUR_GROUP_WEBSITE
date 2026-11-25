@@ -1,6 +1,6 @@
 /**
 * Template Name: Nur Group
-* Updated: Dec 05 2024 with Bootstrap v5.3.3[cite: 3]
+* Updated: Dec 05 2024 with Bootstrap v5.3.3
 * Author: Nur Group Development Team
 * License: Custom License
 */
@@ -399,4 +399,67 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateTransform() {
         modalImg.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
     }
+
+    // Touch screens: pinch to zoom in / out, drag to move a zoomed image
+    let pinchStartDist = 0, pinchStartScale = 1, touchStartX = 0, touchStartY = 0, touchMode = "";
+    function touchDist(t) {
+        return Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+    }
+    modalImg.addEventListener("touchstart", function(e) {
+        if (e.touches.length === 2) {
+            touchMode = "pinch";
+            pinchStartDist = touchDist(e.touches);
+            pinchStartScale = scale;
+        } else if (e.touches.length === 1 && scale > 1) {
+            touchMode = "pan";
+            touchStartX = e.touches[0].clientX - posX;
+            touchStartY = e.touches[0].clientY - posY;
+        }
+    }, { passive: true });
+    modalImg.addEventListener("touchmove", function(e) {
+        if (touchMode === "pinch" && e.touches.length === 2) {
+            e.preventDefault();
+            scale = Math.min(5, Math.max(1, pinchStartScale * touchDist(e.touches) / pinchStartDist));
+            if (scale === 1) { posX = 0; posY = 0; }
+            updateTransform();
+        } else if (touchMode === "pan" && e.touches.length === 1) {
+            e.preventDefault();
+            posX = e.touches[0].clientX - touchStartX;
+            posY = e.touches[0].clientY - touchStartY;
+            updateTransform();
+        }
+    }, { passive: false });
+    modalImg.addEventListener("touchend", function(e) {
+        if (e.touches.length === 0) touchMode = "";
+    }, { passive: true });
 });
+
+/**
+ * Highlight the current page in the menu (same header on every page,
+ * so the "active" item is set here instead of being typed into each file)
+ */
+(function () {
+  const menu = document.querySelector('#navmenu');
+  if (!menu) return;
+
+  const clean = p => p.replace(/\/index\.html$/i, '/').replace(/\/+$/, '/').toLowerCase();
+  const current = clean(location.pathname);
+
+  menu.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const url = new URL(href, location.href);
+    if (url.hash) return;                              // skip #about, #contact
+    if (clean(url.pathname) === current) {
+      a.classList.add('active');
+      const dropdown = a.closest('li.dropdown');       // also light up "Manufacturing Units"
+      if (dropdown) dropdown.querySelector(':scope > a').classList.add('active');
+    }
+  });
+
+  // every page inside /products/ lights up "Products"
+  if (/\/products\//.test(current)) {
+    const link = menu.querySelector('a[href$="products/product-list.html"]');
+    if (link) link.classList.add('active');
+  }
+})();

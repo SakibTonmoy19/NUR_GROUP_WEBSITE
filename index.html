@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index - IT Department NUR Group</title>
+  <title>Index - NUR Group</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -33,6 +33,7 @@
 
   <header id="header" class="header sticky-top">
 
+    <!-- Top Bar -->
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -48,55 +49,47 @@
       </div>
     </div><!-- End Top Bar -->
 
-    <div class="branding d-flex align-items-cente">
-
+    <!-- Logo + Menu -->
+    <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
-<a href="index.html" class="logo d-flex align-items-center">
-  <!-- logo add here -->
-  <img src="assets/img/Logo 2.png" alt="Nur Group Logo" style="width: 105px; height: 90px; border-radius: 50%; object-fit: contain; margin-right: 15px; background: white; padding: 5px;">
-  
-  <h1 class="sitename">Nur Group</h1>
-</a>
 
-<nav id="navmenu" class="navmenu">
-  <ul>
-    <li><a href="#hero" class="active">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <!-- Manufacturing Units Dropdown -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="manufacturingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Manufacturing Units
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="manufacturingDropdown">
-    <li><a class="dropdown-item" href="units/knitting.html">Knitting Unit</a></li>
-    <li><a class="dropdown-item" href="units/laboratory.html">Laboratory Unit</a></li>
-    <li><a href="units/dyeing.html">Dyeing Unit</a></li>
-    <li><a href="units/fabric-finishing.html">Fabric Finishing Unit</a></li>
-    <li><a href="units/all-over-printing.html">All Over Printing Area</a></li>
-    <li><a href="units/yarn-dyeing.html">Yarn Dyeing (Sewing Thread) Unit</a></li>
-    <li><a href="units/garments-washing.html">Garments Washing Unit</a></li>
-    <li><a class="dropdown-item" href="units/screen-printing.html">Screen Print Unit</a></li>
-    <li><a class="dropdown-item" href="units/trims-accessories.html">Trims and Accessories Unit</a></li>
-    <li><a class="dropdown-item" href="units/garments-unit.html">Garments Unit</a></li>
-    <li><a class="dropdown-item" href="units/etp-plant.html">ETP Plant</a></li>
-  </ul>
-</li>
-    <li><a href="products/product-list.html">Products</a></li>
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/Logo%202.png" alt="Nur Group Logo">
+          <h1 class="sitename">Nur Group</h1>
+        </a>
 
-        <!-- display center -->
-    <li><a href="assets/display/display-center.html">Display Center</a></li>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
 
-    <li><a href="assets/Quality/quality-policy.html">Quality Policy</a></li>
-    
+            <!-- Manufacturing Units Dropdown -->
+            <li class="dropdown"><a href="#"><span>Manufacturing Units</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="units/knitting.html">Knitting Unit</a></li>
+                <li><a href="units/laboratory.html">Laboratory Unit</a></li>
+                <li><a href="units/dyeing.html">Dyeing Unit</a></li>
+                <li><a href="units/fabric-finishing.html">Fabric Finishing Unit</a></li>
+                <li><a href="units/all-over-printing.html">All Over Printing Unit</a></li>
+                <li><a href="units/yarn-dyeing.html">Yarn Dyeing (Sewing Thread) Unit</a></li>
+                <li><a href="units/garments-washing.html">Garments Washing Unit</a></li>
+                <li><a href="units/screen-printing.html">Screen Print Unit</a></li>
+                <li><a href="units/trims-accessories.html">Trims and Accessories Unit</a></li>
+                <li><a href="units/garments-unit.html">Garments Unit</a></li>
+                <li><a href="units/etp-plant.html">ETP Plant</a></li>
+              </ul>
+            </li>
 
-    <li><a href="assets/career/career.html">Career</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-</nav>
+            <li><a href="products/product-list.html">Products</a></li>
+            <li><a href="assets/display/display-center.html">Display Center</a></li>
+            <li><a href="assets/Quality/quality-policy.html">Quality Policy</a></li>
+            <li><a href="assets/career/career.html">Career</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
       </div>
-
     </div>
 
   </header>
@@ -187,54 +180,54 @@
     <div class="row gy-4">
       <!-- Strength Items -->
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Knitting.jpeg" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Knitting.jpeg" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Knitting Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Laboratory Section.png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Laboratory Section.png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Laboratory Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Dyeing Section.jpg" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Dyeing Section.jpg" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Dyeing Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Dyeing & Finishing Area.jpg" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Dyeing & Finishing Area.jpg" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;"> Dyeing & Finishing Area</h5>
       </div>
           <div class="row gy-4">
       <!-- Strength Items -->
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Print Area.jpg" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Print Area.jpg" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;"> Print Area</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Cutting Section.png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Cutting Section.png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Cutting Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Img 2.jpg" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Img 2.jpg" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Cutting section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Screen Printing Section (Octopus Areas).png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Screen Printing Section (Octopus Areas).png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;"> Screen Printing Section (Octopus Areas)</h5>
       </div>
             <!-- Strength Items -->
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Sewing Section.png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Sewing Section.png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;"> Sewing Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Ironing Section.png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Ironing Section.png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Ironing Section</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Metal Detection Area.png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Metal Detection Area.png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;"> Metal Detection Area</h5>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
-        <img src="assets/img/our strength/Utility Section (Bio-logical ETP).png" class="img-fluid rounded" alt="Strength" style="width: 100%; height: 180px; object-fit: cover;">
+        <img src="assets/img/our strength/Utility Section (Bio-logical ETP).png" class="img-fluid rounded zoomable-product-img" alt="Strength" style="width: 100%; height: 180px; object-fit: cover; cursor: pointer;">
         <h5 style="margin-top: 15px;">Utility Section (Bio-logical ETP)</h5>
       </div>
     </div>
@@ -255,13 +248,21 @@
 
       <div class="container">
 
+        <div class="slider-wrap">
+        <button type="button" class="slider-arrow slider-prev clients-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+        <button type="button" class="slider-arrow slider-next clients-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 800,
               "autoplay": {
-                "delay": 2000
+                "delay": 2000,
+                "disableOnInteraction": false
+              },
+              "navigation": {
+                "nextEl": ".clients-next",
+                "prevEl": ".clients-prev"
               },
               "slidesPerView": "auto",
               "pagination": {
@@ -308,6 +309,7 @@
             <div class="swiper-slide"><img src="assets/img/clients/laura ashley.webp" class="img-fluid" alt=""></div>
           </div>
         </div>
+        </div><!-- /slider-wrap -->
 
       </div>
 
@@ -410,6 +412,9 @@
     <section id="certificates" class="testimonials section" style="background-image: url('assets/img/images (1).jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 60px 0; position: relative;">
   
   <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="slider-wrap">
+    <button type="button" class="slider-arrow slider-prev certs-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+    <button type="button" class="slider-arrow slider-next certs-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
     <div class="swiper init-swiper">
       <script type="application/json" class="swiper-config">
             
@@ -417,7 +422,12 @@
               "loop": true,
               "speed": 600,
               "autoplay": {
-                "delay": 1000
+                "delay": 1000,
+                "disableOnInteraction": false
+              },
+              "navigation": {
+                "nextEl": ".certs-next",
+                "prevEl": ".certs-prev"
               },
               "slidesPerView": "auto",
               "pagination": {
@@ -529,6 +539,7 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
+    </div><!-- /slider-wrap -->
 
       </div>
 
